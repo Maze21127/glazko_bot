@@ -1,6 +1,8 @@
 from flask import redirect, jsonify
 from app import create_app, db
 from models import Message
+from waitress import serve
+
 
 app = create_app()
 
@@ -23,4 +25,4 @@ def get_message(message_name):
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-        app.run(host='0.0.0.0', port=6571)
+        serve(app, host='0.0.0.0', port=6571)
