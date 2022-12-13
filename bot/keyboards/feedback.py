@@ -26,7 +26,7 @@ BACK_CITIES = {
 }
 
 
-def get_feedback_for_city(city: str, links: list[str]):
+def get_feedback_for_city(city: str, links: list):
     keyboard = InlineKeyboardMarkup(row_width=2)
     keyboard.insert(InlineKeyboardButton("Яндекс", url=links[0]))
     keyboard.insert(InlineKeyboardButton("Google", url=links[1]))
